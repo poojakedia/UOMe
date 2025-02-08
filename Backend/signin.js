@@ -2,6 +2,7 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const auth = getAuth();
 
+
 export const signIn = async (email, password) => {
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
@@ -13,3 +14,4 @@ export const signIn = async (email, password) => {
         alert("Sign In Failed:" + error.message)
     }
 };
+

@@ -1,4 +1,4 @@
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { setDoc, getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const auth = getAuth();
 const fdb = getFirestore(app);

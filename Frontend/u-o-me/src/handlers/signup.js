@@ -3,7 +3,7 @@ import { getFirestore, doc, setDoc } from "firebase/firestore";
 import app from '../firebaseInit'
 
 const fdb = getFirestore(app);
-const auth = getAuth();
+const auth = getAuth(app);
 const createUserHandler = async(name,email, password)=> {
     try{
         const response = await createUserWithEmailAndPassword(auth, email, password);

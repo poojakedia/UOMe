@@ -1,0 +1,41 @@
+
+.progress-container {
+    width: 500px;
+    background-color: #d1fae5; 
+    border-radius: 9999px; 
+    height: 24px; 
+    overflow: hidden;
+    position: relative;
+  }
+  
+
+  .progress-bar {
+    display: flex;
+    height: 100%;
+  }
+  
+
+  .progress-segment1 {
+    background-color: #10b981; 
+    height: 100%;
+  }
+  
+
+  .progress-segment2 {
+    background-color: #6ee7b7; 
+    height: 100%;
+  }
+  
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  

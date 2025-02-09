@@ -35,7 +35,7 @@ function get_numerics(text){
     return Number(cost);
 }
 
-async function updateBalances(chat_id, sender, cost){
+ async function updateBalances(chat_id, sender, cost){
     const chatRef = doc(fdb, "chats", chat_id);
     const chat = await getDoc(chatRef);
     const chatData = chat.data();
@@ -92,14 +92,26 @@ export async function getMessages(chat_id){
     }
 }
 
-export async function getBalances(chat_id) {
+export async function getBalance1(chat_id) {
     const chatRef = doc(fdb, "chats", chat_id);
     const chat = await getDoc(chatRef);
     const chatData = chat.data();
     const balance1 = chatData.balance1;
     const balance2 = chatData.balance2;
 
-    return balance1,balance2;
+    return balance1;
+
+    
+}
+
+export async function getBalance2(chat_id) {
+    const chatRef = doc(fdb, "chats", chat_id);
+    const chat = await getDoc(chatRef);
+    const chatData = chat.data();
+    const balance1 = chatData.balance1;
+    const balance2 = chatData.balance2;
+
+    return balance2;
 
     
 }

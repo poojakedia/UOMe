@@ -43,6 +43,10 @@ export default function MessagesList() {
     
   };
 
+  const profileRedirect = async() =>{
+    navigate("/profile")
+  }
+
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
@@ -85,7 +89,7 @@ export default function MessagesList() {
   return (
     <div className="container">
       <div className="header">
-        <button className="profileButton">Profile Settings</button>
+        <button className="profileButton" onClick={profileRedirect}>Profile Settings</button>
         <h1 className="title">Friends</h1>
         <button className="button" onClick={() => setIsDialogOpen(true)}>
           + Add Friend
@@ -96,7 +100,7 @@ export default function MessagesList() {
           contacts.map((contact) => (
             
             <div key={contact.id} className="contactItem">
-              <button onClick={handleRedirect}>
+              <button onClick={handleRedirect} style={{width: '100%', height: 'auto', justifyContent: "center", textAlign: "center", color: 'white', backgroundColor: 'white', padding: '10px', borderColor: 'white', fontSize: '40'}}>
               <div className="avatar">{getInitials(contact.name)}</div>
               <span className="contactName">{contact.name}</span>
               </button>

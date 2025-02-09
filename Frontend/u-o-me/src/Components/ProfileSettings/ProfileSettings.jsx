@@ -4,6 +4,7 @@ import "./ProfileSettings.css";
 import { setDefaultUserProfile, updateUserProfile } from "../../handlers/userInfoHandler.js";
 import { setDefaultBankingProfile, updateBankingProfile } from "../../handlers/paymentHandler.js";
 
+import { useNavigate } from "react-router-dom";
 export default function ProfileSettings() {
   const [formData, setFormData] = useState({
     dob: "",
@@ -16,6 +17,7 @@ export default function ProfileSettings() {
     routingNumber: "",
     accountType: "",
   });
+  const navigate = useNavigate();
 
   const [showSSN, setShowSSN] = useState(false);
   const [showAccount, setShowAccount] = useState(false);
@@ -29,6 +31,10 @@ export default function ProfileSettings() {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
+
+  const handleRedirect = ()=>{
+    navigate("/friends");
+  }
 
   const validateForm = () => {
     const newErrors = {};
@@ -51,10 +57,12 @@ export default function ProfileSettings() {
   };
 
   const handleSubmit = () => {
-    if (validateForm()) {
+    /*if (validateForm()) {
       setDefaultUserProfile();
       setDefaultBankingProfile();
-    } 
+      
+    }*/
+    handleRedirect(); 
   };
 
   return (

@@ -59,7 +59,6 @@ export default function MessagesList() {
       setContacts(friends);
     } catch (error) {
       console.error("Fetching friends failed:", error.message);
-      alert("Fetching friends failed: " + error.message);
     }
   };
 
@@ -69,7 +68,6 @@ export default function MessagesList() {
     try {
       const friendID = await lookUp(newFriendEmail);
       if (!friendID) {
-        alert("User not found");
         return;
       }
       await addFriend(user.id, friendID);

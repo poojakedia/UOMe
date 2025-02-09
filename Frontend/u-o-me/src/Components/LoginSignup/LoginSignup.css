@@ -2,7 +2,8 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 100px;
+    width: 600px;
     background: #fff;
     padding-bottom: 30px;
 }
@@ -17,7 +18,7 @@
 }
 
 .text{
-    color: #397429;
+    color: #c7e1ba;
     font-size: 48px;
     font-weight: 700;
 }
@@ -25,7 +26,7 @@
 .underline{
     width: 61px;
     height: 6px;
-    background: #397429;
+    background: #c7e1ba;
     border-radius: 9px;
 }
 
@@ -42,7 +43,7 @@
     margin: auto;
     width: 480px;
     height: 80px;
-    background: #397429;
+    background: #c7e1ba;
     border-radius: 6px;
 }
 
@@ -52,14 +53,14 @@
     background: transparent;
     border: none;
     outline: none;
-    color: #397429;
+    color: #878787;
     font-size: 19px;
 }
 
 .have-account{
     padding-left: 62px;
     margin-top: 27px;
-    color: #397429;
+    color: #c7e1ba;
     font-size: 18px;
 }
 
@@ -81,7 +82,7 @@
     width: 220px;
     height: 59px;
     color:#fff;
-    background: #397429;
+    background: #c7e1ba;
     border-radius: 50px;
     font-size: 19px;
     font-weight: 700;

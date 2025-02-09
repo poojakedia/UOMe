@@ -3,6 +3,17 @@ import app from "../firebaseInit";
 import fdb from "../firebaseInit";
 import { collection, getDocs, setDoc, doc, updateDoc, increment, getDoc, addDoc } from "firebase/firestore";
 
+export async function lookUp(email) {
+    const userRef = collection(fdb, "users");
+    const query = await getDocs(userRef);
+    query.forEach((doc) => {
+        if (doc.data().email === email) {
+            return doc.data().id;
+        }
+    });
+    return null;
+}
+
 export async function getFriends(userID) {
     const friendRef = collection(fdb, "users", userID, "friend");
     try {

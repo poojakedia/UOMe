@@ -52,8 +52,8 @@ export async function updateUserProfile(dateOfBirth, ssn, address1, city, state,
       hashedSSN = await bcrypt.hash(ssn, 10); // Hash SSN securely
     }
 
-    // Get user’s IP Address (if using in server-side, else omit)
-    const ipAddress = requestIp.getClientIp(req) || "Unknown IP"; // 'req' needs to be defined in server-side context
+    // Get user's IP address
+    const ipAddress = "Unknown IP";
 
     // Reference Firestore document
     const userDocRef = doc(db, "users", user.uid);

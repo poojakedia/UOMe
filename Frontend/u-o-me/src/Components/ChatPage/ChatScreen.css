@@ -1,0 +1,25 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    font-family: sans-serif;
+
+    width: 100%;
+    /* position: absolute; /* Positions relative to viewport */
+    /* bottom: 0; Sticks it to the bottom */
+    /* left: 50%; Centers it horizontally */
+    /* transform: translateX(-50%); Ensures perfect centering */
+  }
+  
+  .chat-header {
+    padding: 15px;
+    background-color: #0084ff;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+  }

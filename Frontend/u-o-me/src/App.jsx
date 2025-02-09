@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Landing from './Components/Landing/Landing'
-import ChatPage from './Components/ChatPage/ChatPage'
+import ChatScreen from './Components/ChatPage/ChatScreen'
 import FriendsPage from './Components/FriendsPage/FriendsPage'
 import LoginSignup from './Components/LoginSignup/LoginSignup'
 
@@ -22,7 +22,7 @@ function App() {
     <Route path="/" element={<Landing />}/>
     <Route path="/login" element={<LoginSignup />}/>
     <Route path="/friends" element={<FriendsPage />}/>
-    <Route path="/chat" element={<ChatPage 
+    <Route path="/chat" element={<ChatScreen 
     chat_id="2VN4N96qdXVnywAnGaJ8vKi1Qny1 3EI2zYnQdsUk1FB7kaJIq4I64Ce2"
     sender="2VN4N96qdXVnywAnGaJ8vKi1Qny1"/>}/>
     </Routes>

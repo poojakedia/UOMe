@@ -5,6 +5,14 @@ import "./FriendsPage.css";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { lookUp, addFriend, getFriends } from "../../handlers/friendHandler";
 
+const initialContacts = [
+  { id: 1, name: "John Doe" },
+  { id: 2, name: "Jane Smith" },
+  { id: 3, name: "Alice Johnson" },
+  { id: 4, name: "Bob Williams" },
+  { id: 5, name: "Emma Brown" },
+]
+
 function getInitials(name) {
   const names = name.split(" ");
   return names.length > 1
@@ -20,7 +28,7 @@ function generateNameFromEmail(email) {
 }
 
 export default function MessagesList() {
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState(initialContacts)
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [newFriendEmail, setNewFriendEmail] = useState("");
   const [user, setUser] = useState(null);
@@ -30,7 +38,7 @@ export default function MessagesList() {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
       if (currentUser) {
-        fetchFriends(currentUser.uid);
+        fetchFriends(currentUser.id);
       }
     });
     return () => unsubscribe();
@@ -55,7 +63,7 @@ export default function MessagesList() {
         alert("User not found");
         return;
       }
-      await addFriend(user.uid, friendID);
+      await addFriend(user.id, friendID);
       setContacts((prevContacts) => [
         ...prevContacts,
         { id: friendID, name: generateNameFromEmail(newFriendEmail) },

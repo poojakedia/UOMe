@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 export default function LandingPage() {
   return (
     <div className="container">
-      <Header />
       <div className="main-content">
         <div className="text-content">
           <h1 className="title">UOMe</h1>
@@ -20,11 +19,8 @@ export default function LandingPage() {
           </button>
           </Link>
         </div>
-        <div className="mascot">
-          <div className="mascot-placeholder">Mascot Image</div>
-        </div>
+        <AboutUs />
       </div>
-      <AboutUs />
     </div>
   )
 }

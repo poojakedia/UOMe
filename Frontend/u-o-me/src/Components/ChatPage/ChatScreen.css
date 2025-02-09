@@ -1,7 +1,7 @@
 .chat-container {
     display: flex;
     flex-direction: column;
-    height: 50vh;
+    height: 100%;
     max-width: 600px;
     margin: 0 auto;
     border: 1px solid #ccc;
@@ -15,6 +15,9 @@
   }
   
   .chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 15px;
     background-color: #0084ff;
     color: white;
@@ -23,3 +26,17 @@
     font-weight: bold;
     border-bottom: 1px solid #ccc;
   }
+
+.Back{
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.Back:hover.Back:focus{
+  background-color: #e1e1e1;
+}
+
+.Back::before{
+  content: "←";
+  margin-right: 8px;
+}

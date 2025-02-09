@@ -1,3 +1,12 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --background-color: #f4f6f8;
+    --card-background: #ffffff;
+    --border-color: #e0e0e0;
+  }
+
 .container{
     display: flex;
     flex-direction: column;
@@ -18,7 +27,7 @@
 }
 
 .text{
-    color: #c7e1ba;
+    color: var(--primary-color);;
     font-size: 48px;
     font-weight: 700;
 }
@@ -26,7 +35,7 @@
 .underline{
     width: 61px;
     height: 6px;
-    background: #c7e1ba;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 9px;
 }
 
@@ -43,7 +52,7 @@
     margin: auto;
     width: 480px;
     height: 80px;
-    background: #c7e1ba;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 6px;
 }
 
@@ -53,7 +62,7 @@
     background: transparent;
     border: none;
     outline: none;
-    color: #878787;
+    color: #fff;
     font-size: 19px;
 }
 
@@ -82,7 +91,7 @@
     width: 220px;
     height: 59px;
     color:#fff;
-    background: #c7e1ba;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     border-radius: 50px;
     font-size: 19px;
     font-weight: 700;

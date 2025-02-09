@@ -3,8 +3,8 @@ import app from "../firebaseInit";
 import fdb from "../firebaseInit";
 import { collection, getDocs, setDoc, doc, updateDoc, increment, getDoc, addDoc } from "firebase/firestore";
 
-export async function getFriends(user_uid) {
-    const friendRef = collection(fdb, "users", user_uid, "friend");
+export async function getFriends(userID) {
+    const friendRef = collection(fdb, "users", userID, "friend");
     try {
         const snapshot = await getDocs(friendRef);
         const friends = snapshot.docs.map(doc => ({
@@ -18,9 +18,9 @@ export async function getFriends(user_uid) {
     }
 }
 
-export async function addFriend(user_uid, friendID) {
+export async function addFriend(userID, friendID) {
     try {
-        const friendRef = doc(fdb, "users", user_uid, "friend", friendID);
+        const friendRef = doc(fdb, "users", userID, "friend", friendID);
         await setDoc(friendRef, { friendID: friendID });
         console.log("Friend added successfully:", friendID);
     } catch (error) {

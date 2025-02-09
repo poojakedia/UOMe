@@ -11,7 +11,7 @@ const signInHandler = async (email, password) => {
     return user; // Return the user object if needed
   } catch (error) {
     console.error("Sign In Failed:", error.message);
-    alert("Sign In Failed: " + error.message);
+
   }
 };
 

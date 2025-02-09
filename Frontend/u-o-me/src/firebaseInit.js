@@ -5,13 +5,13 @@ import { getFirestore } from "firebase/firestore";
 
 // Make sure the environment variables are correctly named and defined
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.FIREBASE_PROJECT_ID,
-  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER,
-  appId: process.env.FIREBASE_APP_ID,
-  measurementId: process.env.FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyBU5DaQjofn9M-TNS0ASpugf1s0vvU9K0c",
+  authDomain: "uome-34306.firebaseapp.com",
+  projectId: "uome-34306",
+  storageBucket: "uome-34306.firebasestorage.app",
+  messagingSenderId: "846304546211",
+  appId: "1:846304546211:web:511f4e852697a33f859e16",
+  measurementId: "G-WKDNZ9ZCQX"
 };
 
 

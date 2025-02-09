@@ -17,7 +17,6 @@ const createUserHandler = async(fname,lname,email, password)=> {
 
     }catch(error){
         console.log(error); 
-        alert("Registration Failed:" + error.message)
     }
     
   

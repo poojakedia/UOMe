@@ -54,10 +54,7 @@ export default function ProfileSettings() {
     if (validateForm()) {
       setDefaultUserProfile();
       setDefaultBankingProfile();
-      alert("Profile updated successfully!");
-    } else {
-      alert("Please fix the errors before submitting.");
-    }
+    } 
   };
 
   return (

@@ -5,6 +5,8 @@ import "./FriendsPage.css";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { lookUp, addFriend, getFriends } from "../../handlers/friendHandler";
 
+import { useNavigate } from 'react-router-dom';
+
 const initialContacts = [
   { id: 1, name: "John Doe" },
   { id: 2, name: "Jane Smith" },
@@ -28,11 +30,18 @@ function generateNameFromEmail(email) {
 }
 
 export default function MessagesList() {
+  const navigate = useNavigate();
+
   const [contacts, setContacts] = useState(initialContacts)
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [newFriendEmail, setNewFriendEmail] = useState("");
   const [user, setUser] = useState(null);
   const auth = getAuth();
+
+  const handleRedirect = async () => {
+    navigate("/chat"); 
+    
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
@@ -86,10 +95,14 @@ export default function MessagesList() {
       <div className="scrollArea">
         {contacts.length > 0 ? (
           contacts.map((contact) => (
+            
             <div key={contact.id} className="contactItem">
+              <button onClick={handleRedirect}>
               <div className="avatar">{getInitials(contact.name)}</div>
               <span className="contactName">{contact.name}</span>
+              </button>
             </div>
+            
           ))
         ) : (
           <p className="noFriendsMessage">No friends added yet.</p>

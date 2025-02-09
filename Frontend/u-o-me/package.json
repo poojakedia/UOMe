@@ -1,14 +1,13 @@
 {
   "dependencies": {
-    "cra-template": "1.2.0",
+    "bcryptjs": "^2.4.3",
+    "crypto": "^1.0.1",
+    "crypto-browserify": "^3.12.1",
     "dotenv": "^16.4.7",
     "firebase": "^11.3.0",
-    "lucide-react": "^0.475.0",
-    "reacr": "^1.0.0",
-    "react": "^19.0.0",
-    "react-chat-ui": "^0.4.0",
-    "react-dom": "^19.0.0",
-    "react-script": "^2.0.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.0",
     "react-scripts": "^5.0.1",
     "web-vitals": "^4.2.4"
   },

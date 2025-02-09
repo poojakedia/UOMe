@@ -1,5 +1,4 @@
 import React from "react";
-import { ChatFeed, Message } from "react-chat-ui";
 import { createMessage, getMessages } from "../../handlers/chatHandler";
 import './ChatPage.css';
 class Bubble extends React.Component {

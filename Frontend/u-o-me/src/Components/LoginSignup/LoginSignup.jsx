@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './LoginSignup.css';
 
 import user_icon from '../Assets/person.png';
@@ -9,18 +10,33 @@ import createUserHandler from '../../handlers/signup';
 
 const LoginSignup = () => {
   const [action, setAction] = useState("Login");
-
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSignIn = () => {
-    signInHandler(email, password);
+  const navigate = useNavigate();
+
+
+  const handleSignIn = async () => {
+
+    const success = await signInHandler(email, password);
+    if (success) {
+      navigate("/friends"); 
+    } else {
+
+      console.error("Sign in failed");
+    }
   };
 
-  const handleSignUp = () => {
-    createUserHandler(firstName, lastName, email, password);
+  const handleSignUp = async () => {
+    
+    const success = await createUserHandler(firstName, lastName, email, password);
+    if (success) {
+      navigate("/friends"); 
+    } else {
+      console.error("Sign up failed");
+    }
   };
 
   return (
@@ -58,8 +74,7 @@ const LoginSignup = () => {
             type="email" 
             placeholder="Email" 
             value={email} 
-            onChange={(e) => {
-                setEmail((e.target.value).trim())}} 
+            onChange={(e) => setEmail(e.target.value.trim())} 
           />
         </div>
         <div className="input">

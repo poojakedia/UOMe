@@ -91,3 +91,15 @@ export async function getMessages(chat_id){
         console.error(error);
     }
 }
+
+export async function getBalances(chat_id) {
+    const chatRef = doc(fdb, "chats", chat_id);
+    const chat = await getDoc(chatRef);
+    const chatData = chat.data();
+    const balance1 = chatData.balance1;
+    const balance2 = chatData.balance2;
+
+    return balance1,balance2;
+
+    
+}

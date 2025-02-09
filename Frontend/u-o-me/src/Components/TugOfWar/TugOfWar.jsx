@@ -23,7 +23,7 @@ export default function Bar({ chat_id }) {
     fetchBalances();
     const interval = setInterval(() => {
       fetchBalances();
-    }, 5000);
+    }, 1000);
     return () => clearInterval(interval);
 }, [chat_id]);
 

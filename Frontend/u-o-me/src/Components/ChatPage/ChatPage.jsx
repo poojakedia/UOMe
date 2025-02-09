@@ -1,6 +1,7 @@
 import React from "react";
 import { createMessage, getMessages } from "../../handlers/chatHandler";
 import './ChatPage.css';
+
 class Bubble extends React.Component {
   constructor(props) {
     super(props);

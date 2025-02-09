@@ -35,7 +35,7 @@ function get_numerics(text){
     return Number(cost);
 }
 
- async function updateBalances(chat_id, sender, cost){
+export async function updateBalances(chat_id, sender, cost){
     const chatRef = doc(fdb, "chats", chat_id);
     const chat = await getDoc(chatRef);
     const chatData = chat.data();

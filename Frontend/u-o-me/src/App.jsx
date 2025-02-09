@@ -24,7 +24,8 @@ function App() {
     <Route path="/friends" element={<FriendsPage />}/>
     <Route path="/chat" element={<ChatScreen 
     chat_id="2VN4N96qdXVnywAnGaJ8vKi1Qny1 3EI2zYnQdsUk1FB7kaJIq4I64Ce2"
-    sender="2VN4N96qdXVnywAnGaJ8vKi1Qny1"/>}/>
+    sender="2VN4N96qdXVnywAnGaJ8vKi1Qny1"
+    user ="3EI2zYnQdsUk1FB7kaJIq4I64Ce2"/>}/>
     <Route path="/profile" element={<ProfileSettings />}/>
     </Routes>
     </BrowserRouter>

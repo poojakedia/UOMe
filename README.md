@@ -8,7 +8,6 @@ We wanted to create a simple, seamless, and stress-free solution that eliminates
 ## What It Does  
 UOMe allows users to:  
 - Track expenses in real-time and assign who owes what.  
-- Split bills easily with equal or custom distributions.  
 - Settle debts seamlessly and keep track of payments.  
 - Avoid awkward money conversations with automated tracking.  
 
@@ -23,7 +22,7 @@ We leveraged modern web technologies to create a fast, scalable, and reliable pl
 - **Firebase Hosting** – Deployed the frontend for fast and reliable performance.  
 
 ### Backend (Logic & API Development)  
-- **Node.js & Express.js** – Created a scalable backend to handle expense tracking, user authentication, and debt settlements.  
+- **Node.js** – Created a scalable backend to handle expense tracking, user authentication, and debt settlements.  
 - **Cloud Functions** – Processed background tasks efficiently without slowing down the app.  
 
 ### Database & Real-Time Synchronization  
@@ -36,9 +35,8 @@ We leveraged modern web technologies to create a fast, scalable, and reliable pl
 
 ## Challenges We Ran Into  
 1. **Real-Time Data Sync** – Ensuring expenses updated instantly across all devices required careful structuring of Firestore reads and writes.  
-2. **Fair Splitting Logic** – Accounting for equal vs. custom splits while maintaining a user-friendly interface was a design challenge.  
-3. **Balancing Simplicity & Features** – Keeping the app simple yet powerful meant refining the UI/UX without overloading users with options.  
-4. **Security & Privacy** – Implementing authentication and data protection while ensuring ease of use.  
+2. **Balancing Simplicity & Features** – Keeping the app simple yet powerful meant refining the UI/UX without overloading users with options.  
+3. **Security & Privacy** – Implementing authentication and data protection while ensuring ease of use.  
 
 ## Accomplishments That We're Proud Of  
 - Successfully built a real-time expense tracking system with a smooth user experience.  

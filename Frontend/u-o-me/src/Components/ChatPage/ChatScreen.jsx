@@ -13,10 +13,10 @@ const ChatScreen = ({ chat_id, sender }) => {
     <div className="chat-container">
       {/* Header */}
       <div className="chat-header">
-        <button
+        <button className = "backbutton"
         onClick={handleNavigate}>Back</button>
         <h2>John Doe</h2>
-        <button>Pay</button>
+        <button className="paybutton">Pay</button>
       </div>
 
       {/* Chat Bubbles */}

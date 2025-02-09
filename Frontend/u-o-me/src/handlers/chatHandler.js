@@ -1,7 +1,7 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import app from '../firebaseInit';
-import fdb from '../firebaseInit';
-import { collection, getDocs,setDoc, doc, updateDoc, increment } from "firebase/firestore";
+import { fdb } from '../firebaseInit';
+import { collection, getDocs,setDoc, doc, updateDoc, increment, getDoc, addDoc } from "firebase/firestore";
 
 
 export async function createChat(user1, user2){
@@ -75,8 +75,9 @@ export async function createMessage(chat_id, sender, text){
 }
 
 export async function getMessages(chat_id){
+    console.log("Firestore instance:", fdb);
     const chatRef = doc(fdb, "chats", chat_id);
-
+    console.log("chat is", chatRef);
     const messageRef = collection(chatRef, "messages");
     try{
         const snapshot = await getDocs(messageRef);
@@ -84,7 +85,7 @@ export async function getMessages(chat_id){
         const messages = snapshot.docs.map(doc=>({
             id: doc.id,
             ...doc.data()
-        }));
+        })).reverse();
         return messages;
     } catch (error){
         console.error(error);

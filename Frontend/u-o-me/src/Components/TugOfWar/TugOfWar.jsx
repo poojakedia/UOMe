@@ -38,7 +38,7 @@ export default function Bar({ chat_id }) {
         <div>
           <h2 className="split">Split</h2>
           <div className="split-screen">
-            <h3 className="iou"> IOU: ${b2-b1}</h3>
+            <h3 className="iou"> IOU: ${(b2-b1)>0? (b2-b1) : (0)}</h3>
             <ProgressBar value1={b1} value2={b2} />
             <h3> UOMe: ${(b1-b2)>0? (b1-b2) : (0)}</h3>
           </div>

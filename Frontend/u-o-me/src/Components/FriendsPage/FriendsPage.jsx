@@ -85,6 +85,7 @@ export default function MessagesList() {
   return (
     <div className="container">
       <div className="header">
+        <button className="profileButton">Profile Settings</button>
         <h1 className="title">Friends</h1>
         <button className="button" onClick={() => setIsDialogOpen(true)}>
           + Add Friend

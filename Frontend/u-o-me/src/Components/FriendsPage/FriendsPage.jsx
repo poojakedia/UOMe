@@ -36,9 +36,9 @@ export default function MessagesList() {
     return () => unsubscribe();
   }, [auth]);
 
-  const fetchFriends = async (userID) => {
+  const fetchFriends = async () => {
     try {
-      const friends = await getFriends(userID);
+      const friends = await getFriends();
       setContacts(friends);
     } catch (error) {
       console.error("Fetching friends failed:", error.message);

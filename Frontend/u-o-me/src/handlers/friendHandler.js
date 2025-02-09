@@ -1,7 +1,7 @@
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 import app from "../firebaseInit";
 import fdb from "../firebaseInit";
-import { collection, getDocs, setDoc, doc, updateDoc, increment, getDoc, addDoc } from "firebase/firestore";
+import { collection, getDocs, setDoc, doc } from "firebase/firestore";
 
 export async function lookUp(email) {
     const userRef = collection(fdb, "users");
@@ -14,8 +14,12 @@ export async function lookUp(email) {
     return null;
 }
 
-export async function getFriends(userID) {
-    const friendRef = collection(fdb, "users", userID, "friend");
+export async function getFriends() {
+    const user = getAuth(app);
+    if (!user) {
+        return console.error("User is not authenticated.");
+    }
+    const friendRef = collection(fdb, "users", user.id, "friend");
     try {
         const snapshot = await getDocs(friendRef);
         const friends = snapshot.docs.map(doc => ({

@@ -1,12 +1,13 @@
-import { db, auth } from "../firebaseInit"; // Use Firebase initialization
+import { getAuth } from "firebase/auth";
+import app from "../firebaseInit";
+import fdb from "../firebaseInit";
 import { doc, setDoc, updateDoc } from "firebase/firestore";
 import bcrypt from "bcryptjs"; // Install using: npm install bcryptjs
-import requestIp from "request-ip"; // Install using: npm install request-ip
 
 // Function to set default user profile values
 export async function setDefaultUserProfile() {
   try {
-    const user = auth.currentUser;
+    const user = getAuth(app);
 
     // Check if the user is authenticated
     if (!user) {
@@ -25,7 +26,7 @@ export async function setDefaultUserProfile() {
     };
 
     // Reference the user's Firestore document
-    const userDocRef = doc(db, "users", user.uid);
+    const userDocRef = doc(fdb, "users", user.uid);
 
     // Set the document with default values
     await setDoc(userDocRef, defaultValues, { merge: true });
@@ -39,7 +40,7 @@ export async function setDefaultUserProfile() {
 // Function to update user profile
 export async function updateUserProfile(dateOfBirth, ssn, address1, city, state, postalCode) {
   try {
-    const user = auth.currentUser;
+    const user = getAuth(app);
 
     // Check if the user is authenticated
     if (!user) {
@@ -56,7 +57,7 @@ export async function updateUserProfile(dateOfBirth, ssn, address1, city, state,
     const ipAddress = "Unknown IP";
 
     // Reference Firestore document
-    const userDocRef = doc(db, "users", user.uid);
+    const userDocRef = doc(fdb, "users", user.uid);
     await updateDoc(userDocRef, {
       dateOfBirth,
       ssn: hashedSSN,

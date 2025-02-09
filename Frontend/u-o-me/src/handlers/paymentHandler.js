@@ -1,4 +1,6 @@
-import { db, auth } from "../firebaseInit"; // Use Firebase initialization
+import { getAuth } from "firebase/auth";
+import app from "../firebaseInit";
+import fdb from "../firebaseInit";
 import { doc, setDoc, updateDoc } from "firebase/firestore";
 import bcrypt from "bcryptjs"; // Install using: npm install bcryptjs
 
@@ -6,7 +8,7 @@ import bcrypt from "bcryptjs"; // Install using: npm install bcryptjs
 export async function setDefaultBankingProfile() {
 
   try {
-    const user = auth.currentUser;
+    const user = getAuth(app);
 
     // Set default values for user profile
     const defaultValues = {
@@ -16,7 +18,7 @@ export async function setDefaultBankingProfile() {
     };
 
     // Reference the user's Firestore document
-    const userDocRef = doc(db, "users", user.uid);
+    const userDocRef = doc(fdb, "users", user.uid);
 
     // Set the document with default values
     await setDoc(userDocRef, defaultValues, { merge: true });
@@ -30,7 +32,7 @@ export async function setDefaultBankingProfile() {
 export async function updateBankingProfile(routingNumber, accountNumber, bankAccountType) {
 
   try {
-    const user = auth.currentUser;
+    const user = getAuth(app);
 
     // Hash routing number before storing it
     let hashedRoutingNumber = "";
@@ -45,7 +47,7 @@ export async function updateBankingProfile(routingNumber, accountNumber, bankAcc
     }
 
     // Reference Firestore document
-    const userDocRef = doc(db, "users", user.uid);
+    const userDocRef = doc(fdb, "users", user.uid);
     await updateDoc(userDocRef, {
       routingNumber: hashedRoutingNumber,
       accountNumber: hashedAccountNumber,

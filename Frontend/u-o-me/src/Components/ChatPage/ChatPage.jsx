@@ -1,6 +1,7 @@
 import React from "react";
 import { ChatFeed, Message } from "react-chat-ui";
 import { createMessage, getMessages } from "../../handlers/chatHandler";
+import './ChatPage.css';
 class Bubble extends React.Component {
   constructor(props) {
     super(props);
@@ -26,7 +27,6 @@ class Bubble extends React.Component {
   }
 
   handleSend = async() =>{
-    const { chat_id, sender } = this.props;
     const { newMessageText } = this.state;
 
     try{
@@ -43,7 +43,7 @@ class Bubble extends React.Component {
     return (
       <div className="chat-app">
         <div className="messages">
-          {messages.map((msg) => (
+          {messages?.map((msg) => (
             <div 
               key={msg.id}
 

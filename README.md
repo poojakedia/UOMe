@@ -1,3 +1,8 @@
+
+
+https://github.com/user-attachments/assets/18fdd9d8-d29b-458e-9657-510568ba1ef1
+
+
 # UOMe: Simplifying Shared Expenses  
 
 ## Inspiration  

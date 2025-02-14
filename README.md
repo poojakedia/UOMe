@@ -1,9 +1,6 @@
-
-
-https://github.com/user-attachments/assets/18fdd9d8-d29b-458e-9657-510568ba1ef1
-
-
 # UOMe: Simplifying Shared Expenses  
+
+https://github.com/user-attachments/assets/f47fab75-ac35-4697-b4e1-e210a57645cc
 
 ## Inspiration  
 Managing shared expenses with friends, roommates, or colleagues can quickly become frustrating. From splitting rent and utilities to tracking group outings and travel costs, keeping everything organized is a challenge. We’ve all experienced the awkwardness of reminding someone they owe money or dealing with confusing spreadsheets and receipts.  
